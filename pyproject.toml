@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "moodle-seb-bypass"
+version = "1.0.0"
+description = "Take Moodle quizzes locked with Safe Exam Browser from your regular browser — pure Python, macOS/Windows/Linux."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Alexander" }]
+requires-python = ">=3.9"
+dependencies = [
+    "mitmproxy>=9.0; platform_system != 'Windows' or python_version < '3.13'",
+]
+keywords = ["moodle", "seb", "safe-exam-browser", "bypass", "quiz", "mitmproxy"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Education :: Testing",
+]
+
+[project.urls]
+Homepage = "https://github.com/s1rne/moodle-seb-bypass"
+Documentation = "https://github.com/s1rne/moodle-seb-bypass#readme"
+
+[project.scripts]
+seb-bypass = "seb_bypass.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["seb_bypass"]
