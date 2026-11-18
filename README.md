@@ -198,4 +198,12 @@ always follow your institution's academic-integrity policy.
 
 ## License
 
-MIT
+This project is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+In short:
+
+- **NonCommercial** — free to use, study, and modify for personal / educational purposes, but you may **not sell it** or use it for commercial advantage or monetary compensation.
+- **ShareAlike** — if you fork or remix it, your version **must stay open** under the same CC BY-NC-SA 4.0 license (no proprietary closed-source forks).
+- **Attribution** — you must credit the original project and indicate changes.
+
+See the full license text in [LICENSE](LICENSE).
