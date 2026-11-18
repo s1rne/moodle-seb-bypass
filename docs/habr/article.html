@@ -29,7 +29,7 @@
 
 <blockquote><p>Лонгрид о том, как Moodle проверяет «тот ли это браузер», почему проверка держится на одном заголовке и как обычный Chrome убедил сервер, что он Safe Exam Browser. Внутри: SHA256, mitmproxy, немного боли с кроссвордами и график результатов.</p></blockquote>
 
-<p><img src="fig1_protocol.png" alt="Схема: браузер, mitmproxy и Moodle, пять шагов проверки"></p>
+<p><img src="https://raw.githubusercontent.com/s1rne/moodle-seb-bypass/main/docs/habr/fig1_protocol.png" alt="Схема: браузер, mitmproxy и Moodle, пять шагов проверки"></p>
 
 <h2>Дано</h2>
 
@@ -57,7 +57,7 @@
 
 <p>Он отдаёт XML property list с настройками SEB для этого теста: какие клавиши запрещены, разрешён ли Wi-Fi, куда запрещено переключаться, и так далее. Никакой магии, обычный конфиг.</p>
 
-<p><img src="fig2_configkey.png" alt="Четыре шага от XML до ConfigKey"></p>
+<p><img src="https://raw.githubusercontent.com/s1rne/moodle-seb-bypass/main/docs/habr/fig2_configkey.png" alt="Четыре шага от XML до ConfigKey"></p>
 
 <p>ConfigKey это SHA256 от этого конфига, но не «как есть», а после канонизации. Вот весь алгоритм (из <code>seb_bypass/configkey.py</code>):</p>
 
@@ -111,7 +111,7 @@
 
 <p>А дальше сессия с валидным флагом пропускается без проверки заголовков. То есть SEB-заголовок нужен один раз, чтобы «отметиться», потом можно ходить по тесту как обычный браузер. Это резко упрощает жизнь: перехватывать нужно только вход на квиз, а не каждый запрос.</p>
 
-<p><img src="fig3_cookie.png" alt="Cookie MoodleSession из DevTools и команда в терминале"></p>
+<p><img src="https://raw.githubusercontent.com/s1rne/moodle-seb-bypass/main/docs/habr/fig3_cookie.png" alt="Cookie MoodleSession из DevTools и команда в терминале"></p>
 
 <h2>Прокси, который делает вид, что вы SEB</h2>
 
@@ -154,7 +154,7 @@ flagged = <span class="str">f"q{qubaid}:{slot}_:flagged"</span></code></pre>
 
 <h2>Результат</h2>
 
-<p><img src="fig4_score.png" alt="График: баллы по всем квизам курса, 772 из 780"></p>
+<p><img src="https://raw.githubusercontent.com/s1rne/moodle-seb-bypass/main/docs/habr/fig4_score.png" alt="График: баллы по всем квизам курса, 772 из 780"></p>
 
 <p>772 балла из 780, это 98.71% курса. В таблице лидеров: 22-е место из 372 студентов, при том, что остальные шли в основном через SEB и руками. Потери: один квиз по лексике (19/20, двусмысленное определение), грамматика 18.33/20 (спорный вопрос с «spill»), listening 16/20 (аудио, где скрипту делать нечего).</p>
 
