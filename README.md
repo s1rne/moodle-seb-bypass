@@ -1,5 +1,8 @@
 # moodle-seb-bypass
 
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![tests](https://github.com/s1rne/moodle-seb-bypass/actions/workflows/tests.yml/badge.svg)](https://github.com/s1rne/moodle-seb-bypass/actions/workflows/tests.yml)
+
 **Take Moodle quizzes that are locked behind [Safe Exam Browser](https://safeexambrowser.org/) (SEB) from your regular browser — no VM, no admin rights, no SEB installed.**
 
 Pure Python. Works on **macOS**, **Windows** and **Linux**.
